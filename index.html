@@ -83,6 +83,31 @@
             50% {background-position: 100% 100%;}
             100% {background-position: 0 0;}
         }
+        
+         /* Stylowanie paska tłumaczenia */
+        #google_translate_element {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(255, 215, 0, 0.8);
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        #google_translate_element select {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        #google_translate_element select:hover {
+            transform: translateY(-2px);
+            background-color: #FFA500;
+        }
 
         header {
             display: flex;
@@ -247,6 +272,8 @@
             <a href="#mission">Misja</a>
             <a href="#events">Wydarzenia</a>
             <a href="#contact">Kontakt</a>
+            <!-- Element Google Translate -->
+            <div id="google_translate_element"></div>
         </nav>
     </header>
 
@@ -270,5 +297,17 @@
     <footer>
         &copy; 2024 świenci Ślonzocy. Strona została zahostowana za pomocą GitHub: <a href="https://github.com/Jacobeagle/swiencislonzocy">Repozytorium </a>
     </footer>
+    <!-- Skrypt Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pl',
+                includedLanguages: 'pl,en,es,de,fr,it,pt,uk,zh,ja,ko,nl,sv,no,da,fi', // Dodano wszystkie języki
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
